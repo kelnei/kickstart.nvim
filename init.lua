@@ -127,7 +127,14 @@ require('lazy').setup({
   --
   -- Then, because we use the `opts` key (recommended), the configuration runs
   -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
-
+  {
+    'ethanholz/nvim-lastplace',
+    opts = {
+      lastplace_ignore_buftype = { 'quickfix', 'nofile', 'help' },
+      lastplace_ignore_filetype = { 'gitcommit', 'gitrebase', 'svn', 'hgcommit' },
+      lastplace_open_folds = true,
+    },
+  },
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
